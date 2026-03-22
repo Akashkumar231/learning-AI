@@ -1,0 +1,57 @@
+# Python cache files
+
+**pycache**/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+
+venv/
+env/
+ENV/
+.venv/
+
+# Environment variables
+
+.env
+.env.*
+
+# Model checkpoints or large files (optional)
+
+*.h5
+*.pkl
+*.joblib
+
+# Jupyter Notebook checkpoints
+
+.ipynb_checkpoints/
+
+# Logs
+
+*.log
+
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+
+.vscode/
+.idea/
+
+# Build / distribution
+
+build/
+dist/
+*.egg-info/
+
+# Testing
+
+.coverage
+.pytest_cache/
+
+# Temporary files
+
+*.tmp
+*.temp
