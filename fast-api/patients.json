@@ -1,0 +1,32 @@
+{
+ "patient": {
+   "patient_id": "P12345",
+   "personal_info": {
+     "name": "John Smith",
+     "age": 35,
+     "gender": "Male",
+     "blood_type": "AB+",
+     "contact": {
+       "phone": "555-1234",
+       "email": "john.smith@example.com",
+       "address": "123 Main Street, Anytown, USA"
+     }
+   },
+   "medical_info": {
+     "diseases": ["Hypertension", "Diabetes"],
+     "medications": [
+       { "name": "Metformin", "dosage": "500mg", "frequency": "Twice daily" },
+       { "name": "Lisinopril", "dosage": "10mg", "frequency": "Once daily" }
+     ],
+     "last_visit": "2023-05-12"
+   },
+   "appointments": [
+     { "doctor": "Dr. Jane Doe", "date": "2023-03-01", "time": "14:00", "reason": "Annual Checkup" },
+     { "doctor": "Dr. John Smith", "date": "2023-05-12", "time": "10:30", "reason": "Follow-up" }
+   ],
+   "medical_records": [
+     { "date": "2022-12-15", "doctor": "Dr. Jane Doe", "diagnosis": "Common cold",
+       "prescription": "Rest and fluids" }
+   ]
+ }
+}

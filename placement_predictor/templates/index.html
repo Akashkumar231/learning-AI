@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Predictor</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align:center;
+            margin-top:100px;
+            background:#f4f4f4;
+        }
+
+        .box{
+            background:white;
+            width:300px;
+            margin:auto;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input{
+            width:90%;
+            padding:10px;
+            margin:10px;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#007BFF;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Placement Predictor</h2>
+
+<input type="number" id="iq" placeholder="Enter IQ"><br>
+<input type="number" id="cgpa" placeholder="Enter CGPA"><br>
+
+<button onclick="predict()">Predict</button>
+
+<div id="result"></div>
+
+</div>
+
+
+<script>
+
+async function predict(){
+
+    let iq = document.getElementById("iq").value
+    let cgpa = document.getElementById("cgpa").value
+
+    const response = await fetch("http://127.0.0.1:8000/predict",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            iq:parseFloat(iq),
+            cgpa:parseFloat(cgpa)
+        })
+    })
+
+    const data = await response.json()
+
+    if(data.placement==1)
+        document.getElementById("result").innerText="Student Will Get Placement ✅"
+    else
+        document.getElementById("result").innerText="Student Will NOT Get Placement ❌"
+
+}
+
+</script>
+
+</body>
+</html>
